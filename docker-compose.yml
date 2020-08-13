@@ -7,6 +7,7 @@ networks:
 services:
   influxdb:
     image: influxdb:latest
+    # entrypoint: /bin/bash
     networks:
       - k6
       - grafana
@@ -17,6 +18,8 @@ services:
 
   grafana:
     image: grafana/grafana:latest
+    # entrypoint: /bin/bash
+    # user: root
     networks:
       - grafana
     ports:
@@ -25,7 +28,6 @@ services:
       - GF_AUTH_ANONYMOUS_ORG_ROLE=Admin
       - GF_AUTH_ANONYMOUS_ENABLED=true
       - GF_AUTH_BASIC_ENABLED=false
-    # entrypoint: /bin/bash
     volumes:
       - ./dashboards:/var/lib/grafana/dashboards
       - ./grafana-dashboard.yaml:/etc/grafana/provisioning/dashboards/dashboard.yaml
@@ -33,6 +35,8 @@ services:
 
   k6:
     image: loadimpact/k6:latest
+    # entrypoint: /bin/sh
+    # user: root
     networks:
       - k6
     ports:
