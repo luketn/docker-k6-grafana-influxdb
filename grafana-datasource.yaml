@@ -1,7 +1,7 @@
 apiVersion: 1
 
 datasources:
-  - name: myinfluxdb
+  - name: k6influxdb
     type: influxdb
     access: proxy
     database: k6
