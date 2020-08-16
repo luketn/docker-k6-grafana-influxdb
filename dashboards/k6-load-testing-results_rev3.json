@@ -50,6 +50,7 @@
   "graphTooltip": 2,
   "hideControls": false,
   "id": null,
+  "uid": "k6",
   "links": [],
   "refresh": "5s",
   "rows": [
