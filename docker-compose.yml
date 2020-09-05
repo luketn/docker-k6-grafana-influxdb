@@ -7,7 +7,8 @@ networks:
 services:
   influxdb:
     image: influxdb:latest
-    # entrypoint: /bin/bash
+#    entrypoint: /bin/sh
+#    user: root
     networks:
       - k6
       - grafana
@@ -18,8 +19,8 @@ services:
 
   grafana:
     image: grafana/grafana:latest
-    # entrypoint: /bin/bash
-    # user: root
+#    entrypoint: /bin/sh
+#    user: root
     networks:
       - grafana
     ports:
@@ -35,8 +36,8 @@ services:
 
   k6:
     image: loadimpact/k6:latest
-    # entrypoint: /bin/sh
-    # user: root
+#    entrypoint: /bin/sh
+#    user: root
     networks:
       - k6
     ports:
