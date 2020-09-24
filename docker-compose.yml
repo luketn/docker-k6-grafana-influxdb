@@ -35,7 +35,7 @@ services:
       - ./grafana-datasource.yaml:/etc/grafana/provisioning/datasources/datasource.yaml
 
   k6:
-    image: loadimpact/k6:latest
+    image: loadimpact/k6:master
 #    entrypoint: /bin/sh
 #    user: root
     networks:
