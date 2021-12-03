@@ -29,6 +29,7 @@ services:
       - GF_AUTH_ANONYMOUS_ORG_ROLE=Admin
       - GF_AUTH_ANONYMOUS_ENABLED=true
       - GF_AUTH_BASIC_ENABLED=false
+      - GF_SERVER_SERVE_FROM_SUB_PATH=true
     volumes:
       - ./dashboards:/var/lib/grafana/dashboards
       - ./grafana-dashboard.yaml:/etc/grafana/provisioning/dashboards/dashboard.yaml
