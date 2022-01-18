@@ -8,7 +8,7 @@ https://medium.com/swlh/beautiful-load-testing-with-k6-and-docker-compose-4454ed
 
 #### Dashboards
 The dashboard in /dashboards is adapted from the excellent K6 / Grafana dashboard here:
-https://grafana.com/grafana/dashboards/2587
+https://grafana.com/grafana/dashboards/15574
 
 There are only two small modifications:
 * the data source is configured to use the docker created InfluxDB data source
