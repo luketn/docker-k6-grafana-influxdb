@@ -1,21 +1,28 @@
 # docker-k6-grafana-influxdb
-Demonstrates how to run load tests with containerised instances of K6, Grafana and InfluxDB.
 
-#### Article
-This is the accompanying source code for the following article. Please read for a detailed breakdown of the code and how K6, Grafana and InfluxDB work together using Docker Compose:
+Демонстрирует, как запускать нагрузочные тесты с использованием контейнерных экземпляров K6, Grafana и InfluxDB.
 
-https://medium.com/swlh/beautiful-load-testing-with-k6-and-docker-compose-4454edb3a2e3
+### Информационные панели
 
-#### Dashboards
-The dashboard in /dashboards is adapted from the excellent K6 / Grafana dashboard here:
+Информационная панель в /dashboards адаптирована из отличной информационной панели K6 / Grafana, представленной здесь:
 https://grafana.com/grafana/dashboards/2587
 
-There are only two small modifications:
-* the data source is configured to use the docker created InfluxDB data source
-* the time period is set to now-15m, which I feel is a better view for most tests
+Есть только две небольшие модификации:
+* источник данных настроен на использование созданного в docker источника данных InfluxDB
+* период времени установлен равным 15 месяцам, что, на мой взгляд, является лучшим вариантом для большинства тестов
 
-#### Scripts
-The script here is an example of a low Virtual User (VU) load test of the excellent Star Wars API:
-https://swapi.dev/
+### Скрипты
 
-If you're tinkering with the script, it is just a friendly open source API, be gentle!
+Приведенный здесь скрипт является примером тестирования открытого API https://reqres.in/
+
+❗ Вы можете выводить детализированные точки данных в формате JSON. Для этого используйте `k6 run --out json=<path.json>` флаг или отправить на Uri для внешней базы данных метрик
+
+❗ Для отладки HTTP-ответа можно запустить с `--http-debug="full"` флагом и получить подробный вывод для отладки
+
+### Запуск
+
+```bash
+$ docker-compose up
+# Можно открыть Grafana http://localhost:3000/d/k6/k6-load-testing-results
+$ sh run-create-update.sh
+```
